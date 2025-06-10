@@ -2,7 +2,7 @@
 	"name": "genetiq-app",
 	"private": true,
 	"version": "0.0.0",
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"start": "concurrently \"node server/index.js --watch server/*\" \"vite\" --kill-others --kill-others-on-fail",
 		"build": "tsc -b && vite build",

@@ -11,6 +11,7 @@ import { ConcernsWidget } from "@/Features/Dashboard/ConcernsWidget/ConcernsWidg
 import { SystemDetailWidget } from "@/Features/Dashboard/SystemDetailWidget/SystemDetailWidget";
 import { useSelector } from "react-redux";
 import { RootState } from "@/App/Redux/store";
+import { useTheme } from "@/hooks/useTheme";
 
 const Dashboard = () => {
 	const [isNotFirstAnimation, setIsNotFirstAnimation] = useState(false);
@@ -18,6 +19,8 @@ const Dashboard = () => {
 		(state: RootState) => state.category.selectedCategory,
 	);
 	const [category, setCategory] = useState(selectedCategory || "total");
+
+	useTheme();
 
 	useEffect(() => {
 		if (selectedCategory !== "total") {
